@@ -60,12 +60,12 @@ window.onload=function(){
 initial();
 }
 //难度设置
-function  set(a,b) {
+function  set(a,b) {restart();
     map_size=a;
     document.getElementById('mineland').style.width=26*a+4*(a+1)+'px';
     document.getElementById('mineland').style.height=26*a+4*(a+1)+'px';
     mine_num=b;
-    restart();
+    
 
 }
 function initial() {
