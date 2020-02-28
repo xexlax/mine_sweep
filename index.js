@@ -1,55 +1,60 @@
-var map=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+var map=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+          [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 //初始化
-var discover=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
-const color=['rgba(0,0,0,0)','#00b','#080',
-    '#a00','#707','#850',
-    '#079','#333','#000']
-var map_size=18,mine_num=20;
-var count_mine,time=0,timer_on=false;
+var discover=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+const color=['rgba(0,0,0,0)','#e6fbf8','#8300f1',
+    '#ffa700','#026e00','#ff5845',
+    '#5dcbff','#333','#000']
+var map_size=18,mine_num=60;
+var count_mine,time=0,timer_on=false,gameover=false;
 var timer =setInterval(timefun,1000);
 function timefun(){
-    if(timer_on)
+    if(timer_on&&!gameover)
     time++;
-    document.getElementById('time').innerText="用时："+time+"秒";
+    document.getElementById('time').innerText=" 用时："+time+"秒";
 
 }
 window.onload=function(){
-
-
+    let a=map_size,b=count_mine;
+    document.getElementById('mineland').style.width=26*a+4*(a+1)-3+'px';
+    document.getElementById('mineland').style.height=26*a+4*(a+1)-3+'px';
         document.oncontextmenu = function(e){
             e.preventDefault();
         };
@@ -60,16 +65,20 @@ window.onload=function(){
 initial();
 }
 //难度设置
-function  set(a,b) {restart();
+function  set(a,b) {
+
+    let r=confirm('确定更改设定吗？');
+    if(!r)return;
     map_size=a;
-    document.getElementById('mineland').style.width=26*a+4*(a+1)+'px';
-    document.getElementById('mineland').style.height=26*a+4*(a+1)+'px';
+    document.getElementById('mineland').style.width=26*a+4*(a+1)-3+'px';
+    document.getElementById('mineland').style.height=26*a+4*(a+1)-3+'px';
     mine_num=b;
-    
+    if(r) initial();
+
 
 }
 function initial() {
-
+    gameover=false;
     time=0;
     set_block();
     set_mine(mine_num);
@@ -113,14 +122,14 @@ function set_mine(num){
 }
 //描绘地图
 function paint() {
-    document.getElementById('mine_last').innerText='剩余地雷数：'+count_mine;
+    document.getElementById('mine_last').innerText='剩余雷数：'+count_mine;
     for(let i=0;i<map_size;i++){
         for(let j=0;j<map_size;j++){
             let dom_obj=document.getElementById('i'+i+'j'+j);
             if(discover[i][j]===1){
                 if(map[i][j]===-1) {dom_obj.innerText='💣';}
                 else{
-                dom_obj.style.backgroundColor='#9c3'
+                dom_obj.style.backgroundColor='#82ddae'
                 dom_obj.style.color=color[map[i][j]];
                 dom_obj.innerText=map[i][j];}
 
@@ -130,10 +139,10 @@ function paint() {
                 if(discover[i][j]===2){
 
                     dom_obj.innerText='🚩';
-                    dom_obj.style.color='red';
+
                 }
-                else{dom_obj.style.backgroundImage=undefined;
-                    dom_obj.style.backgroundColor='aquamarine';}
+                else{dom_obj.innerText='';
+                    }
             }
         }
         }
@@ -162,10 +171,9 @@ function calc() {
 }
 //揭示
 function right_click(i,j){
-    if(timer_on=false){document.getElementById('pause').innerText='继续'}
+    if(timer_on===false){document.getElementById('pause').innerText='继续'}
     else{ document.getElementById('pause').innerText='暂停'}
-
-    timer_on=true;
+ timer_on=true;
     if(i<0||j<0||i>=map_size||j>=map_size) return;
     if(discover[i][j]===0){
         discover[i][j]=1;
@@ -189,17 +197,17 @@ function right_click(i,j){
 
 function ripple(x,y){
     discover[x][y]=1;
-    if(map[x][y]===0&&x<map_size-1&&y<map_size-1&&y>0&&x>0)
-    { if(discover[x][y-1]===0) ripple(x,y-1);
-       if(discover[x+1][y]===0) ripple(x+1,y);
-       if(discover[x-1][y]===0) ripple(x-1,y);
-       if(discover[x][y+1]===0) ripple(x,y+1);
-        if(discover[x+1][y+1]===0) ripple(x+1,y+1);
-        if(discover[x-1][y+1]===0) ripple(x-1,y+1);
-        if(discover[x+1][y-1]===0) ripple(x+1,y-1);
-        if(discover[x-1][y-1]===0)ripple(x-1,y-1);
+    if(map[x][y]===0)
+    { if(y>0&&discover[x][y-1]===0) ripple(x,y-1);
+       if(x<map_size-1&&discover[x+1][y]===0) ripple(x+1,y);
+       if(x>0&&discover[x-1][y]===0) ripple(x-1,y);
+       if(y<map_size-1&&discover[x][y+1]===0) ripple(x,y+1);
+        if(y<map_size-1&&x<map_size-1&&discover[x+1][y+1]===0) ripple(x+1,y+1);
+        if(y<map_size-1&&x>0&&discover[x-1][y+1]===0) ripple(x-1,y+1);
+        if(x<map_size-1&&y>0&&discover[x+1][y-1]===0) ripple(x+1,y-1);
+        if(x>0&&y>0&&discover[x-1][y-1]===0)ripple(x-1,y-1);
 
-    } else{return;}
+    }
 
 
 }
@@ -207,7 +215,7 @@ function ripple(x,y){
 
 
 function flag(i,j){
-    if(timer_on=false){document.getElementById('pause').innerText='继续'}
+    if(timer_on===false){document.getElementById('pause').innerText='继续'}
     else{ document.getElementById('pause').innerText='暂停'}
     timer_on=true;
         discover[i][j]=2-discover[i][j];
@@ -221,7 +229,7 @@ function flag(i,j){
 //双击开屏
 function double_click(x,y){
     //更新计时器状态
-    if(timer_on=false){document.getElementById('pause').innerText='继续'}
+    if(timer_on===false){document.getElementById('pause').innerText='继续'}
     else{ document.getElementById('pause').innerText='暂停'}
     timer_on=true;
     //统计旗子数量
@@ -237,7 +245,7 @@ function double_click(x,y){
     if(x>0&&y>0&&discover[x-1][y-1]===2) s++;
     if(y>0&&x<map_size-1&&discover[x+1][y-1]===2) s++;
 
-    if(map[x][y]>0){
+    if(s===map[x][y]&&s>0){
 
     if(discover[x+1][y]===0) right_click(x+1,y);
     if(discover[x][y-1]===0) right_click(x,y-1);
@@ -250,6 +258,7 @@ function double_click(x,y){
 }
 }
 function check_win() {
+    if(gameover)return;
     for(let i=0;i<map_size;i++){
         for(let j=0;j<map_size;j++){
             if(discover[i][j]===0) return false;
@@ -260,6 +269,7 @@ function check_win() {
 }
 
 function win() {
+    gameover=true;
     timer_on=false;
  alert('congratulations');
 }
@@ -270,17 +280,36 @@ function bomb(){
         }
     }
     paint();
+    gameover=true;
     timer_on=false;
     alert('gameover');
 }
 function pause() {
-    if(timer_on=true){timer_on=false; document.getElementById('pause').innerText='继续'}
+    if(timer_on===true){timer_on=false; document.getElementById('pause').innerText='继续'}
     else{timer_on=true; document.getElementById('pause').innerText='暂停'}
 
 
 }
 function restart() {
-    confirm('确定重新开始吗QAQ？');
-    initial();
+   let r=confirm('确定重新开始吗QAQ？');
+
+   if(r) initial();
+
+}
+function characterize() {
+
+        let a=Math.floor(prompt("请输入地图的边长","18"));
+    let b=Math.floor(prompt("请输入地雷的数量","60"));
+
+    while(a>19){alert('边长不得超过19'); a=Math.floor(prompt("请输入地图的边长","18"));};
+    while(a<1){alert('边长不得低于1');    a=Math.floor(prompt("请输入地图的边长","18"));};
+    while(b>a*a){alert('地雷过多，请重新输入');b=Math.floor(prompt("请输入地雷的数量","60"));};
+
+    set(a,b);
+
+
+}
+function  showHelp() {
+    alert('这是扫雷的游戏说明，可惜遭到制作者的删减：数字代表方格周围的地雷数目，按鼠标左键揭示一个方格，如果点击到了地雷，你会输掉游戏；按鼠标右键可以将方格用红旗标记；双击一个已经揭示的方格可以快捷打开其周围所有的方格；你的目标是把所有非雷的方格点开。今天能重新看到这段说明，👴非常感动')
 
 }
