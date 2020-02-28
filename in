@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扫雷游戏</title>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <script src="index.js"></script>
+</head>
+<body onselectstart="return false">
+
+<div id="main">
+<div id="mineland">
+
+
+</div>
+<div id="operation">
+    <div class="inf" id="time">用时：0秒</div>
+    <div class="inf" id="mine_last">剩余地雷数：0个</div>
+    <div>
+    <div class="button" id="restart" onclick="restart()">重新开始</div>
+    <div class="button" id="pause" onclick="pause()">暂 停</div>
+    <div class="button" id="select1" onclick="set(10,14)">低难度</div>
+    <div class="button" id="select2" onclick="set(15,35)">中难度</div>
+    <div class="button" id="select3" onclick="set(18,60)">高难度</div>
+    <div class="button" id="select4" >自定义</div>
+    </div>
+</div>
+</div>
+</body>
+</html>
